@@ -1,0 +1,21 @@
+{
+    "name": "taavit/twig-extra-bundle",
+    "description": "This bundles provides extra twig extensions and filter",
+    "keywords": ["symfony2", "date", "twig"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [{
+        "name" : "Dawid Królak",
+        "email" : "taavit@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony" : "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Taavit\\TwigExtraBundle\\": ""
+        }
+    },
+    "target-dir" : "Taavit/TwigExtraBundle"
+}

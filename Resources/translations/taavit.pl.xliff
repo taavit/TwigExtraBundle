@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        	<trans-unit id="1">
+                <source>Just now</source>
+                <target>Przed chwilą</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>One minute ago|%minutes% minutes ago</source>
+                <target>Minutę temu|%minutes% minuty temu|%minutes% minut temu</target>
+            </trans-unit>
+            
+            <trans-unit id="3">
+                <source>One hour ago|%hours% hours ago</source>
+                <target>Godzinę temu|%hours% godziny temu|%hours% godzin temu</target>
+            </trans-unit>
+            
+            
+            <trans-unit id="4">
+                <source>One day ago|%days% days ago</source>
+                <target>Wczoraj|%days% dni temu|%days% dni temu</target>
+            </trans-unit>
+            
+            <trans-unit id="5">
+                <source>One month ago|%months% months ago</source>
+                <target>Miesiąc temu|%months% miesiące temu|%months% miesięcy temu</target>
+            </trans-unit>
+            
+            <trans-unit id="6">
+                <source>One year ago|%years% years ago</source>
+                <target>Rok temu|%years% lata temu|%years% lat temu</target>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>
