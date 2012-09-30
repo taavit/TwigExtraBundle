@@ -2,7 +2,7 @@
 <phpunit bootstrap="./Tests/bootstrap.php">
   <testsuites>
     <testsuite name="taavit`s TwigExtraBundle Test Suite">
-      <directory>./Tests</directory>
+      <directory suffix="TestCase.php">./Tests</directory>
     </testsuite>
   </testsuites>
   <filter>
