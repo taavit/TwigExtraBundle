@@ -1,7 +1,7 @@
 {
     "name": "taavit/twig-extra-bundle",
-    "description": "This bundles provides extra twig extensions and filter",
-    "keywords": ["symfony2", "date", "twig"],
+    "description": "This bundles provides extra twig extensions and filter (DateTime prettifier)",
+    "keywords": ["symfony2", "date", "twig", "datetime"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [{
