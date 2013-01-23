@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        	<trans-unit id="1">
+                <source>Just now</source>
+                <target>Maintenant</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>One minute ago|%minutes% minutes ago</source>
+                <target>Il y a une minute|Il y a %minutes% minutes</target>
+            </trans-unit>
+            
+            <trans-unit id="3">
+                <source>One hour ago|%hours% hours ago</source>
+                <target>Il y a une heure|Il y a %hours% heures</target>
+            </trans-unit>
+            
+            <trans-unit id="4">
+                <source>One day ago|%days% days ago</source>
+                <target>Il y a un jour|Il y a %days% jours</target>
+            </trans-unit>
+            
+            <trans-unit id="5">
+                <source>One month ago|%months% months ago</source>
+                <target>Il y a un mois|Il y a %months% mois</target>
+            </trans-unit>
+            
+            <trans-unit id="6">
+                <source>One year ago|%years% years ago</source>
+                <target>Il y a un an|Il y a %years% ans</target>
+            </trans-unit>
+
+            <trans-unit id="7">
+                <source>In one year|In %years% years</source>
+                <target>Dans un an|Dans %years% ans</target>
+            </trans-unit>
+
+            <trans-unit id="8">
+                <source>In one month ago|In %months% months</source>
+                <target>Dans un mois|Dans %months% mois</target>
+            </trans-unit>
+            
+            <trans-unit id="9">
+                <source>In one day|In %days% days</source>
+                <target>Dans un jour|Dans %days% jours</target>
+            </trans-unit>
+            
+            <trans-unit id="10">
+                <source>In one hour|In %hours% hours</source>
+                <target>Dans une heure|Dans %hours% heures</target>
+            </trans-unit>
+            
+            <trans-unit id="11">
+                <source>In one minute|In %minutes% minutes</source>
+                <target>Dans une minute|Dans %minutes% minutes</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
