@@ -5,8 +5,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-	    <service id="taavit.twig.date_extension" class="Taavit\TwigExtraBundle\Twig\Extension\DateExtension">
+	    <service id="taavit.twig.date_extension" class="Taavit\TwigExtraBundle\Twig\Extension\DateExtension" >
 	    	<argument type="service" id="translator" />
+	        <tag name="twig.extension" />
+	    </service>
+	    <service id="taavit.twig.url_extension" class="Taavit\TwigExtraBundle\Twig\Extension\UrlExtension" >
 	        <tag name="twig.extension" />
 	    </service>
 	</services>
