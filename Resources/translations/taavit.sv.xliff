@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        	<trans-unit id="1">
+                <source>Just now</source>
+                <target>Nyss</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>One minute ago|%minutes% minutes ago</source>
+                <target>En minut sedan|%minutes% minuter sedan</target>
+            </trans-unit>
+            
+            <trans-unit id="3">
+                <source>One hour ago|%hours% hours ago</source>
+                <target>En timme sedan|%hours% timmar sedan</target>
+            </trans-unit>
+            
+            <trans-unit id="4">
+                <source>One day ago|%days% days ago</source>
+                <target>En dag sedan|%days% dagar sedan</target>
+            </trans-unit>
+            
+            <trans-unit id="5">
+                <source>One month ago|%months% months ago</source>
+                <target>En månad sedan|%months% månader sedan</target>
+            </trans-unit>
+            
+            <trans-unit id="6">
+                <source>One year ago|%years% years ago</source>
+                <target>Ett år sedan|%years% år sedan</target>
+            </trans-unit>
+
+            <trans-unit id="7">
+                <source>In one year|In %years% years</source>
+                <target>Om ett år|Om %years% år</target>
+            </trans-unit>
+
+            <trans-unit id="8">
+                <source>In one month ago|In %months% months</source>
+                <target>Om en månad|Om %months% månader</target>
+            </trans-unit>
+            
+            <trans-unit id="9">
+                <source>In one day|In %days% days</source>
+                <target>Om endag|Om %days% dagar</target>
+            </trans-unit>
+            
+            <trans-unit id="10">
+                <source>In one hour|In %hours% hours</source>
+                <target>Om en timme|Om %hours% timmar</target>
+            </trans-unit>
+            
+            <trans-unit id="11">
+                <source>In one minute|In %minutes% minutes</source>
+                <target>Om en minut|Om %minutes% minuter</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
