@@ -7,7 +7,7 @@ use Twig_Extension;
 use Twig_Filter_Method;
 
 /**
- * @author Dawid Królak [taavit@gmail.com]
+ * @author Dawid Królak <taavit@gmail.com>
  *
  */
 class UrlExtension extends Twig_Extension
@@ -25,7 +25,7 @@ class UrlExtension extends Twig_Extension
             return null;
         }
         if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
-            $url = "http://" . $url;
+            $url = "http://$url";
         }
         return $url;
     }
