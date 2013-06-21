@@ -47,7 +47,7 @@ class DateExtension extends Twig_Extension
      */
     public function abbr($string, $timestamp)
     {
-        return '<abbr class="timestamp" data-utime="' . $timestamp . '">' . $string . '</abbr>';
+        return '<abbr class="timestamp" data-utime="' . $timestamp . '" title="' . date("Y-m-d H:i:s", $timestamp) . '">' . $string . '</abbr>';
     }
 
     /**
