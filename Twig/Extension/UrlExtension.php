@@ -35,4 +35,3 @@ class UrlExtension extends Twig_Extension
         return 'url_extension';
     }
 }
-

@@ -15,14 +15,15 @@ class DateExtension extends Twig_Extension
     /**
      * @var
      */
-    protected $_translator;
+    protected $translator;
 
     /**
      * @param Translator $translator
      */
-    public function __construct(Translator $translator)
+    public function __construct(Translator $translator, $time = null)
     {
-        $this->_translator = $translator;
+        $this->translator = $translator;
+        $this->setTime($time);
     }
 
     /**
@@ -58,134 +59,154 @@ class DateExtension extends Twig_Extension
     public function prettify(\DateTime $date)
     {
         $date = $date->getTimestamp();
-        $diff = time() - $date;
+        $diff = $this->time - $date;
         if ($diff > 0) {
-            if ($diff < 60) {
-                return $this->abbr($this->_translator->trans('Just now'), $date);
-            }
-            if ($diff < 3600) {
-                $minutes = floor($diff / 60);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'One minute ago|%minutes% minutes ago',
-                        $minutes,
-                        array('%minutes%' => $minutes),
-                        'taavit'
-                    ), $date);
-            }
-            if ($diff < 86400) {
-                $hours = floor($diff / 3600);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'One hour ago|%hours% hours ago',
-                        $hours,
-                        array('%hours%' => $hours),
-                        'taavit'
-                    ), $date);
-            }
-            if ($diff < 2592000) {
-                $days = floor($diff / 86400);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'One day ago|%days% days ago',
-                        $days,
-                        array('%days%' => $days),
-                        'taavit'
-                    ), $date);
-            }
-            if ($diff < 31536000) {
-                $months = floor($diff / 2592000);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'One month ago|%months% months ago',
-                        $months,
-                        array('%months%' => $months),
-                        'taavit'
-                    ), $date);
-            }
-            $years = floor($diff / 31536000);
-
-            return $this->abbr($this
-                ->_translator
-                ->transChoice(
-                    'One year ago|%years% years ago',
-                    $years,
-                    array('%years%' => $years),
-                    'taavit'
-                ), $date);
-        } else {
-            $diff = abs($diff);
-            if ($diff > 31536000) {
-                $years = floor($diff / 31536000);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'In one year|In %years% years',
-                        $years,
-                        array('%years%' => $years),
-                        'taavit'
-                    ), $date);
-            } elseif ($diff > 2592000) {
-                $months = floor($diff / 2592000);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'In one month ago|In %months% months',
-                        $months,
-                        array('%months%' => $months),
-                        'taavit'
-                    ), $date);
-            } elseif ($diff > 86400) {
-                $days = floor($diff / 86400);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'In one day|In %days% days',
-                        $days,
-                        array('%days%' => $days),
-                        'taavit'
-                    ), $date);
-            } elseif ($diff > 3600) {
-                $hours = floor($diff / 3600);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'In one hour|In %hours% hours',
-                        $hours,
-                        array('%hours%' => $hours),
-                        'taavit'
-                    ), $date);
-            } elseif ($diff > 60) {
-                $minutes = floor($diff / 60);
-
-                return $this->abbr($this
-                    ->_translator
-                    ->transChoice(
-                        'In one minute|In %minutes% minutes',
-                        $minutes,
-                        array('%minutes%' => $minutes),
-                        'taavit'
-                    ), $date);
-            } else {
-                return $this->abbr($this->_translator->trans('Just now'), time());
-            }
+            return $this->abbr($this->handlePast($diff), $date);
         }
+        return $this->abbr($this->handleFuture($diff), $date);
     }
 
     public function getName()
     {
         return 'date_extension';
+    }
+
+    public function setTime($time = null)
+    {
+        if (null === $time) {
+            $time = time();
+        }
+        $this->time = $time;
+    }
+
+    protected function handlePast($diff)
+    {
+        if ($diff < 60) {
+            return $this->translator->trans('Just now');
+        }
+        if ($diff < 3600) {
+            $minutes = floor($diff / 60);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'One minute ago|%minutes% minutes ago',
+                    $minutes,
+                    array('%minutes%' => $minutes),
+                    'taavit'
+                );
+        }
+        if ($diff < 86400) {
+            $hours = floor($diff / 3600);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'One hour ago|%hours% hours ago',
+                    $hours,
+                    array('%hours%' => $hours),
+                    'taavit'
+                );
+        }
+        if ($diff < 2592000) {
+            $days = floor($diff / 86400);
+            // var_dump($this->_translator->getLocale());die;
+            return $this
+                ->translator
+                ->transChoice(
+                    'One day ago|%days% days ago',
+                    $days,
+                    array('%days%' => $days),
+                    'taavit'
+                );
+        }
+        if ($diff < 31536000) {
+            $months = floor($diff / 2592000);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'One month ago|%months% months ago',
+                    $months,
+                    array('%months%' => $months),
+                    'taavit'
+                );
+        }
+        $years = floor($diff / 31536000);
+
+        return $this
+            ->translator
+            ->transChoice(
+                'One year ago|%years% years ago',
+                $years,
+                array('%years%' => $years),
+                'taavit'
+            );
+    }
+
+    protected function handleFuture($diff)
+    {
+        $diff = abs($diff);
+        if ($diff > 31536000) {
+            $years = floor($diff / 31536000);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'In one year|In %years% years',
+                    $years,
+                    array('%years%' => $years),
+                    'taavit'
+                );
+        }
+        if ($diff > 2592000) {
+            $months = floor($diff / 2592000);
+
+            return $this
+                ->_translator
+                ->transChoice(
+                    'In one month ago|In %months% months',
+                    $months,
+                    array('%months%' => $months),
+                    'taavit'
+                );
+        }
+        if ($diff > 86400) {
+            $days = floor($diff / 86400);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'In one day|In %days% days',
+                    $days,
+                    array('%days%' => $days),
+                    'taavit'
+                );
+        }
+        if ($diff > 3600) {
+            $hours = floor($diff / 3600);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'In one hour|In %hours% hours',
+                    $hours,
+                    array('%hours%' => $hours),
+                    'taavit'
+                );
+        }
+        if ($diff > 60) {
+            $minutes = floor($diff / 60);
+
+            return $this
+                ->translator
+                ->transChoice(
+                    'In one minute|In %minutes% minutes',
+                    $minutes,
+                    array('%minutes%' => $minutes),
+                    'taavit'
+                );
+        }
+        return $this->translator->trans('Just now');
     }
 }

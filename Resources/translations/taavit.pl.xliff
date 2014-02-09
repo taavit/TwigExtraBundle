@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language='pl' datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="1">
                 <source>Just now</source>
                 <target>Przed chwilą</target>
             </trans-unit>
+
             <trans-unit id="2">
                 <source>One minute ago|%minutes% minutes ago</source>
                 <target>Minutę temu|%minutes% minuty temu|%minutes% minut temu</target>
@@ -16,7 +17,6 @@
                 <target>Godzinę temu|%hours% godziny temu|%hours% godzin temu</target>
             </trans-unit>
             
-            
             <trans-unit id="4">
                 <source>One day ago|%days% days ago</source>
                 <target>Wczoraj|%days% dni temu|%days% dni temu</target>
@@ -26,13 +26,36 @@
                 <source>One month ago|%months% months ago</source>
                 <target>Miesiąc temu|%months% miesiące temu|%months% miesięcy temu</target>
             </trans-unit>
-            
+
             <trans-unit id="6">
                 <source>One year ago|%years% years ago</source>
                 <target>Rok temu|%years% lata temu|%years% lat temu</target>
             </trans-unit>
-            
-            
+
+            <trans-unit id="7">
+                <source>In one year|In %years% years</source>
+                <target>Za rok|Za %years% lat</target>
+            </trans-unit>
+
+            <trans-unit id="8">
+                <source>In one month ago|In %months% months</source>
+                <target>Za miesiąc|Za %months% miesięcy</target>
+            </trans-unit>
+
+            <trans-unit id="9">
+                <source>In one day|In %days% days</source>
+                <target>Jutro|Za %days% dni</target>
+            </trans-unit>
+
+            <trans-unit id="10">
+                <source>In one hour|In %hours% hours</source>
+                <target>Za godzinę|Za %hours% godzin</target>
+            </trans-unit>
+
+            <trans-unit id="11">
+                <source>In one minute|In %minutes% minutes</source>
+                <target>Za minutę|Za %minutes% minut</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
