@@ -2,7 +2,6 @@
 namespace Taavit\TwigExtraBundle\Twig\Extension;
 
 use Symfony\Component\Translation\Translator;
-
 use Twig_Extension;
 use Twig_Filter_Method;
 
