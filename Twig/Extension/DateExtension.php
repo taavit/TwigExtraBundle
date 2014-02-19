@@ -110,7 +110,6 @@ class DateExtension extends Twig_Extension
         }
         if ($diff < 2592000) {
             $days = floor($diff / 86400);
-            // var_dump($this->_translator->getLocale());die;
             return $this
                 ->translator
                 ->transChoice(
@@ -163,7 +162,7 @@ class DateExtension extends Twig_Extension
             $months = floor($diff / 2592000);
 
             return $this
-                ->_translator
+                ->translator
                 ->transChoice(
                     'In one month ago|In %months% months',
                     $months,
