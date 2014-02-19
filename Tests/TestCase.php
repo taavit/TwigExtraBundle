@@ -11,6 +11,6 @@ class TestCase extends \PHPUnit_Framework_TestCase
         $translator = new Translator('en');
         $extension = new DateExtension($translator, 0);
         $result = $extension->prettify(new \DateTime(0));
-        $this->assertEqual($result, 'Just now');
+        $this->assertEquals($result, 'Just now');
     }
 }
