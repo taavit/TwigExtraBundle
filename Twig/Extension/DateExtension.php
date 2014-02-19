@@ -23,6 +23,7 @@ class DateExtension extends Twig_Extension
 
     /**
      * @param Translator $translator
+     * @param integer $time
      */
     public function __construct(Translator $translator, $time = null)
     {
