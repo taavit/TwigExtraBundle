@@ -15,6 +15,11 @@ class DateExtension extends Twig_Extension
      * @var
      */
     protected $translator;
+    
+    /**
+     * @var
+     */
+    protected $time;
 
     /**
      * @param Translator $translator
