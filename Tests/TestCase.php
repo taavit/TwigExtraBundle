@@ -8,9 +8,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
 {
     public function testPrettifyFuture()
     {
-        $translator = new Translator();
-        $extension = new DateExtension($translator);
+        $translator = new Translator('en');
+        $extension = new DateExtension($translator, 0);
         $result = $extension->prettify(new \DateTime(0));
-        $this->assert($result, '');
+        $this->assertEqual($result, 'Just now');
     }
 }
