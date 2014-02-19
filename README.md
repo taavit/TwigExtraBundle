@@ -1,6 +1,6 @@
 TwigExtraBundle
 =================
-[![Build Status](https://secure.travis-ci.org/taavit/TwigExtraBundle.png)](http://travis-ci.org/taavit/TwigExtraBundle)
+[![Build Status](https://secure.travis-ci.org/taavit/TwigExtraBundle.png)](http://travis-ci.org/taavit/TwigExtraBundle) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/taavit/TwigExtraBundle/badges/quality-score.png?s=d68f4bf474b9800342b70b2acadf035311607b41)](https://scrutinizer-ci.com/g/taavit/TwigExtraBundle/)
 
 
 ##Installation via composer
