@@ -1,7 +1,7 @@
 <?php
 namespace Taavit\TwigExtraBundle\Twig\Extension;
 
-use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\TranslatorInterface;
 use Twig_Extension;
 use Twig_Filter_Method;
 
@@ -25,7 +25,7 @@ class DateExtension extends Twig_Extension
      * @param Translator $translator
      * @param integer $time
      */
-    public function __construct(Translator $translator, $time = null)
+    public function __construct(TranslatorInterface $translator, $time = null)
     {
         $this->translator = $translator;
         $this->setTime($time);
