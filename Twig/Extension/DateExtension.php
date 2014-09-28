@@ -22,7 +22,7 @@ class DateExtension extends Twig_Extension
     protected $time;
 
     /**
-     * @param Translator $translator
+     * @param TranslatorInterface $translator
      * @param integer $time
      */
     public function __construct(TranslatorInterface $translator, $time = null)
@@ -76,6 +76,9 @@ class DateExtension extends Twig_Extension
         return 'date_extension';
     }
 
+    /**
+     * @param integer $time
+     */
     public function setTime($time = null)
     {
         if (null === $time) {
